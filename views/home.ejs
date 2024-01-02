@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+	<script src="js/home.js"></script>
+    <title>Home</title>
+</head>
+<body>
+
+
+<form action="/chat" method="post">
+    <div class="radio-inputs">
+		<label>
+			<input class="radio-input" type="radio" value="Vercetti" name="engine">
+				<span class="radio-tile">
+					<img src="pictures/vercetti.png" width="60px" alt="">
+					<span class="radio-label">Vercetti</span>
+				</span>
+		</label>
+		<label>
+			<input checked="" class="radio-input" type="radio" value="Vagos" name="engine">
+			<span class="radio-tile">
+				<img src="pictures/vagos.png" width="60px" alt="">
+				<span class="radio-label">Vagos</span>
+			</span>
+		</label>
+		<label>
+			<input class="radio-input" type="radio" value="Groove" name="engine">
+			<span class="radio-tile">
+				<img src="pictures/groove.jpg" width="60px" alt="">
+				<span class="radio-label">Groove</span>
+			</span>
+		</label>
+</div>
+<input type="text" name="user" placeholder="Username" required>
+<input type="password" name="pass" placeholder="Password" required>
+<input type="submit" value="Enter Chat" class="btn">
+
+
+</form>
+</body>
+</html>

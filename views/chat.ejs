@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+    <script src="js/chat.js"></script>
+    <link rel="stylesheet" href="css/chat.css">
+    <style>
+        :root{
+            --bg: <%=palette.background %>;
+            --primary: <%=palette.primary %>;
+            --light : <%=palette.light %>;
+        }
+        body{
+            background-color: var(--bg);
+        }
+    </style>
+    <title>Chat</title>
+</head>
+<body>
+    <h1>Chat</h1>
+
+    <% if(JSON.stringify(chat)) {%>
+        <p>On the Chat Server : <%= chat %></p>
+    <% } else { %>
+        <p>Couldn't find server</p> <% } %>
+
+    <p id="conn" style="visibility: hidden;"></p>
+
+</body>
+</html>
