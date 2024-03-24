@@ -8,8 +8,8 @@
     <title>Home</title>
 </head>
 <body>
-
-
+<div class="mainContainer">
+	<div></div>
 <form action="/chat" method="post">
     <div class="radio-inputs">
 		<label>
@@ -34,11 +34,13 @@
 			</span>
 		</label>
 </div>
-<input type="text" name="user" placeholder="Username" required>
-<input type="password" name="pass" placeholder="Password" required>
+<div class="textInputs">
+<input type="text" id="textinput" name="user" placeholder="Username" required>
+<input type="password" id="textinput" name="pass" placeholder="Password" required>
 <input type="submit" value="Enter Chat" class="btn">
-
-
+</div>
 </form>
+<div></div>
+</div>
 </body>
 </html>
