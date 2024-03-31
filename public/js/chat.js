@@ -10,11 +10,14 @@ window.onload = () => {
 
   chatForm.addEventListener('submit',(e) => {
     e.preventDefault();
-    console.log(1);
 
-    const message = messageInput.value;
-
+    let message = messageInput.value;
     socket.emit('emitMessage', {message, username, room})
+
+    const messageElement = document.createElement('div');
+    messageElement.textContent = `You: ${message}`;
+    messageContainer.appendChild(messageElement);
+
     messageInput.value = '';
   })
 
@@ -26,9 +29,9 @@ window.onload = () => {
     }, 3000);
   });
 
+
   socket.on("message", (data) => {
-    console.log(data.message);
-    const messageElement = document.createElement('div');
+    let messageElement = document.createElement('div');
     messageElement.textContent = `${data.username}: ${data.message}`;
 
     messageContainer.appendChild(messageElement);

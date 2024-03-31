@@ -42,7 +42,9 @@ app.post("/chat", (req, res) => {
     socket.broadcast.emit("userConn", `${username} joined ${selectedOption}`);
 
     socket.on('emitMessage', (data) => {
-      socket.broadcast.to(selectedOption).emit('message', {username, message: data.message});
+      if(data.room == selectedOption){
+      socket.broadcast.to(selectedOption).emit('message', {username: data.username , message: data.message});
+      }
     });
 
     socket.on("disconnect", () => {
